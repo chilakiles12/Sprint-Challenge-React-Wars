@@ -14,14 +14,19 @@ const App = () => {
   const [starState, setStarState] = useState([]);
   useEffect(() => {
     axios
-      .get('https://swapi.co/api/people/1/')
-      .then(response => setStarState(response.data))
+      .get('https://swapi.co/api/people/')
+      .then(response => {
+        console.log(response.data);
+        setStarState(response.data);
+      })
       .catch(err => console.log(err));
   }, []);
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <CardExampleCard starState={starState} />
+      {starState.map((response, index) => {
+        return <CardExampleCard name={response.name} key={index} />;
+      })}
     </div>
   );
 };
