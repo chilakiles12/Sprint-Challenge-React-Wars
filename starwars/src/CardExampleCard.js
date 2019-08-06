@@ -7,8 +7,6 @@ const CardExampleCard = props => (
       <Card.Content>
         <Card.Header>{props.starState.name}</Card.Header>
         <Card.Meta>{props.starState.gender}</Card.Meta>
-        {/* <Card.Meta>{props.starState.height}</Card.Meta>
-        <Card.Meta>{props.starState.skin_color}</Card.Meta> */}
         <Card.Description>{props.starState.homeworld}</Card.Description>
       </Card.Content>
       <Card.Content extra>
@@ -19,6 +17,7 @@ const CardExampleCard = props => (
       </Card.Content>
     </Card>
 
+    <Card color="red" />
     <Card color="red" />
     <Card color="red" />
   </Card.Group>

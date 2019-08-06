@@ -14,7 +14,7 @@ const App = () => {
   const [starState, setStarState] = useState([]);
   useEffect(() => {
     axios
-      .get('https://swapi.co/api/people/')
+      .get('https://swapi.co/api/people/1/')
       .then(response => {
         console.log(response.data);
         setStarState(response.data);
@@ -24,9 +24,10 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      {starState.map((response, index) => {
+      {/* {starState.map((response, index) => {
         return <CardExampleCard name={response.name} key={index} />;
-      })}
+      })} */}
+      <CardExampleCard starState={starState} />
     </div>
   );
 };
